@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Sre.K8s</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Andres Basile</Authors>
+    <Description>SRE K8s Helper.</Description>
+    <RepositoryUrl>https://github.com/basilean/sre.k8s</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- OpenTELemetry -->
+    <PackageReference Include="OpenTelemetry" Version="1.12.0" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.12.0" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.12.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.12.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.12.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.12.0" />
+    <!-- Swagger -->
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4" />
+  </ItemGroup>
+
+</Project>
