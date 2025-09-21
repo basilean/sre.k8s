@@ -28,7 +28,7 @@ jobs:
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          source-​url: "https://nuget.pkg.github.com/basilean/index.json"
+          source-url: "https://nuget.pkg.github.com/basilean/index.json"
         env:
           NUGET_​AUTH_​TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
