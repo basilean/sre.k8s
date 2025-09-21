@@ -30,7 +30,7 @@ jobs:
         with:
           source-​url: "https://nuget.pkg.github.com/basilean/index.json"
         env:
-          NUGET_​AUTH_​TOKEN: ${{secrets.​GITHUB_​TOKEN}}
+          NUGET_​AUTH_​TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
       - name: Push to GitHub Packages
         run: |
