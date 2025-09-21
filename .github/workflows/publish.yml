@@ -1,0 +1,34 @@
+name: Publish to GitHub Packages
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build project
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Pack NuGet package
+        run: dotnet pack --configuration Release --no-build -o ./nupkg
+
+      - name: Push to GitHub Packages
+        run: |
+          dotnet nuget push ./nupkg/*.nupkg \
+            --source "github" \
+            --api-key ${{ secrets.GITHUB_TOKEN }}
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
